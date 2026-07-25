@@ -1,0 +1,150 @@
+TECHCORP ENTERPRISES
+Q2 FY2026 ENTERPRISE FINANCIAL REPORT
+Finance Division | CONFIDENTIAL
+Period: April 1, 2026 – June 30, 2026
+
+========================================================
+EXECUTIVE SUMMARY
+========================================================
+
+TechCorp Enterprises delivered strong second-quarter results, with total revenue of $142.8 million, representing a 23.4% increase year-over-year (Q2 FY2025: $115.7 million). Gross profit improved to $84.6 million (59.3% margin), up from $64.2 million (55.5% margin) in Q2 FY2025.
+
+Net income for Q2 FY2026 was $18.4 million, compared to $9.8 million in Q2 FY2025 — an 87.8% increase. Adjusted EBITDA reached $31.2 million (21.8% margin). The company maintains a strong cash position of $267.4 million as of June 30, 2026.
+
+========================================================
+REVENUE BREAKDOWN BY SEGMENT
+========================================================
+
+1. Cloud Platform Services (SaaS)
+   - Revenue: $78.3 million (up 31.2% YoY)
+   - Annual Recurring Revenue (ARR): $289.4 million
+   - Net Revenue Retention (NRR): 118%
+   - New Enterprise Logos: 47 (up from 31 in Q2 FY2025)
+
+2. Professional Services & Consulting
+   - Revenue: $34.6 million (up 14.8% YoY)
+   - Utilization Rate: 82%
+   - Key projects: FinTech integration (Deutsche Bank), government digital transformation (3 contracts)
+
+3. AI & Data Analytics Platform
+   - Revenue: $19.7 million (NEW segment, first full quarter)
+   - Products: DataSense Pro, Gemini-powered enterprise analytics suite
+   - Customers: 124 enterprise accounts
+   - Product gross margin: 71.4%
+
+4. Training & Certification
+   - Revenue: $10.2 million (up 8.9% YoY)
+   - Certificates issued: 14,280
+   - Partnership expansion: AWS, Google Cloud, Microsoft certifications added
+
+========================================================
+COST STRUCTURE
+========================================================
+
+Cost of Revenue: $58.2 million
+  - Infrastructure & Hosting: $21.4 million
+  - Third-Party Software Licenses: $12.7 million
+  - Professional Services Delivery: $18.3 million
+  - Support & Operations: $5.8 million
+
+Operating Expenses: $63.4 million
+  - Research & Development: $24.1 million (16.9% of revenue)
+  - Sales & Marketing: $26.8 million (18.8% of revenue)
+  - General & Administrative: $12.5 million (8.8% of revenue)
+
+Total Operating Costs: $121.6 million
+Operating Income: $21.2 million
+
+========================================================
+PROFITABILITY
+========================================================
+
+Gross Profit: $84.6 million | Gross Margin: 59.3%
+Operating Income: $21.2 million | Operating Margin: 14.9%
+Net Income: $18.4 million | Net Margin: 12.9%
+Adjusted EBITDA: $31.2 million | EBITDA Margin: 21.8%
+EPS (Diluted): $0.74 (vs. $0.41 in Q2 FY2025)
+
+========================================================
+BALANCE SHEET HIGHLIGHTS (as of June 30, 2026)
+========================================================
+
+Total Assets: $614.8 million
+  - Cash & Cash Equivalents: $267.4 million
+  - Accounts Receivable: $89.3 million (DSO: 56 days)
+  - Deferred Revenue: $142.6 million
+  - Goodwill & Intangibles: $103.2 million (from Nexus Analytics acquisition)
+
+Total Liabilities: $221.4 million
+  - Long-Term Debt: $95.0 million (5.2% senior notes, due 2029)
+  - Deferred Revenue (current): $88.4 million
+
+Total Stockholders' Equity: $393.4 million
+
+========================================================
+CASH FLOW STATEMENT
+========================================================
+
+Operating Cash Flow: $34.7 million
+Capital Expenditures: $(8.2 million)
+  - Data center expansion (Singapore): $(4.1 million)
+  - R&D lab equipment: $(2.3 million)
+  - Office buildout (Austin HQ): $(1.8 million)
+
+Free Cash Flow: $26.5 million (up from $12.1 million in Q2 FY2025)
+
+Acquisitions: $(0) — No acquisitions in Q2 FY2026
+Share Repurchases: $(10.0 million) — Board-authorized buyback program
+Ending Cash Balance: $267.4 million
+
+========================================================
+HEADCOUNT & WORKFORCE
+========================================================
+
+Total Employees (EOP): 2,847
+  - Engineering & Product: 1,124 (39.5%)
+  - Sales & Marketing: 643 (22.6%)
+  - Professional Services: 498 (17.5%)
+  - G&A: 302 (10.6%)
+  - Support & Operations: 280 (9.8%)
+
+Q2 Hires: 214 | Q2 Departures: 87 | Voluntary Attrition Rate: 8.2%
+Revenue per Employee: $50,123 (up 16.4% YoY)
+
+Global Offices: Austin (HQ), London, Singapore, Mumbai, Toronto, Berlin
+
+========================================================
+Q3 FY2026 GUIDANCE
+========================================================
+
+Revenue: $148.0 – $153.0 million
+Gross Margin: 59.5% – 61.0%
+Adjusted EBITDA Margin: 22.0% – 24.0%
+Non-GAAP EPS: $0.78 – $0.84
+
+Key Q3 catalysts:
+- Launch of TechCorp AI Studio (enterprise LLM platform) — August 2026
+- Federal government contract award expected ($22M TCV)
+- European market expansion (Paris and Amsterdam offices opening)
+
+========================================================
+RISKS & CONSIDERATIONS
+========================================================
+
+1. Macroeconomic: Rising enterprise IT budget scrutiny may slow deal cycles.
+2. Competition: Hyperscaler competition (AWS, Microsoft, Google) intensifying in AI platform segment.
+3. Regulatory: EU AI Act compliance requirements may increase development costs in H2 FY2026.
+4. Talent: Continued competition for senior AI/ML engineers driving compensation inflation.
+5. FX Headwinds: Strong USD created a 2.1% revenue headwind vs. prior year (constant currency growth: 25.5%).
+
+========================================================
+NOTES TO FINANCIAL STATEMENTS
+========================================================
+
+This report contains forward-looking statements based on management's current expectations and assumptions. Actual results may differ materially from those anticipated. This report has been prepared in accordance with US GAAP.
+
+Independent Auditor: Deloitte & Touche LLP
+Board Audit Committee Approved: July 15, 2026
+
+Investor Relations Contact: ir@techcorp.com
+CFO: Margaret K. Chen | CEO: David Ramirez

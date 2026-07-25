@@ -1,0 +1,233 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 10001 >>
+stream
+BT
+/F1 8 Tf
+30 800 Td
+12 TL
+(TECHCORP ENTERPRISES) Tj T*
+(STANDARD OPERATING PROCEDURES \(SOP\) GUIDE) Tj T*
+(IT Operations & Platform Engineering | Version 2.4 | January 2026) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(PURPOSE) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(This Standard Operating Procedures \(SOP\) guide documents the) Tj T*
+(repeatable processes, escalation paths, and operational runbooks) Tj T*
+(for TechCorp's IT Operations and Platform Engineering teams.) Tj T*
+() Tj T*
+(All on-call engineers and DevOps personnel are required to follow) Tj T*
+(these procedures during normal operations and incident response.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(SOP-001: PRODUCTION DEPLOYMENT PROCEDURE) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(Objective: Ensure safe, auditable, zero-downtime deployments) Tj T*
+(to production environments.) Tj T*
+() Tj T*
+(Prerequisites:) Tj T*
+(- All automated tests pass in CI pipeline \(GitHub Actions\).) Tj T*
+(- Code review approved by at least 2 senior engineers.) Tj T*
+(- Change Request \(CR\) ticket created in ServiceNow with CR number.) Tj T*
+(- Deployment window: Monday?Thursday, 10:00 AM ? 3:00 PM EST.) Tj T*
+(  \(No deployments on Fridays or weekends without CISO/CTO approval.\)) Tj T*
+(- Deployment owner must be available for 2 hours post-deployment.) Tj T*
+() Tj T*
+(Steps:) Tj T*
+(1. Announce deployment in #deployments Slack channel with CR number.) Tj T*
+(2. Verify staging environment matches production configuration.) Tj T*
+(3. Run pre-deployment checklist \(see Appendix A\).) Tj T*
+(4. Execute deployment via ArgoCD \(Kubernetes\) or AWS CodeDeploy.) Tj T*
+(5. Monitor health dashboards for 30 minutes post-deployment.) Tj T*
+(6. Confirm all smoke tests pass.) Tj T*
+(7. Update ServiceNow CR ticket to "Deployed - Monitoring".) Tj T*
+(8. Post deployment summary in #deployments after 30-minute monitoring window.) Tj T*
+() Tj T*
+(Rollback Trigger: Any of the following triggers immediate rollback:) Tj T*
+(- Error rate > 1% of requests within 10 minutes.) Tj T*
+(- P95 latency exceeds 3x baseline.) Tj T*
+(- Any critical alert in PagerDuty during monitoring window.) Tj T*
+(- Customer-impacting bug reported via support channel.) Tj T*
+() Tj T*
+(Rollback Steps:) Tj T*
+(1. Execute rollback command in ArgoCD / CodeDeploy.) Tj T*
+(2. Notify #deployments and #incidents immediately.) Tj T*
+(3. Create P1/P2 incident in PagerDuty.) Tj T*
+(4. Initiate incident response per SOP-003.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(SOP-002: DATABASE BACKUP & RECOVERY PROCEDURE) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(Objective: Ensure database integrity and recoverability.) Tj T*
+() Tj T*
+(Backup Schedule:) Tj T*
+(- Production RDS \(PostgreSQL\): Full backup daily at 02:00 UTC.) Tj T*
+(  Automated snapshots every 4 hours. Retention: 35 days.) Tj T*
+(- Analytics DWH \(Snowflake\): Daily export to S3 at 03:00 UTC.) Tj T*
+(  Retention: 90 days.) Tj T*
+(- MongoDB Atlas: Continuous backup with point-in-time recovery.) Tj T*
+(  Retention: 14 days.) Tj T*
+() Tj T*
+(Recovery Procedure \(Database Restore\):) Tj T*
+(1. Raise a P1 incident in PagerDuty; notify DBA on-call.) Tj T*
+(2. Identify Recovery Point Objective \(RPO\): What is the latest) Tj T*
+(   acceptable recovery point?) Tj T*
+(3. Select the appropriate backup snapshot from AWS RDS console) Tj T*
+(   or the backup management dashboard.) Tj T*
+(4. Launch restore to a new isolated RDS instance first.) Tj T*
+(5. Validate data integrity with the pre-defined integrity check script.) Tj T*
+(6. Coordinate with application teams for read-only failover.) Tj T*
+(7. Execute DNS cutover to restored instance.) Tj T*
+(8. Notify stakeholders and close incident.) Tj T*
+() Tj T*
+(RTO Target: 4 hours for full database recovery.) Tj T*
+(RPO Target: Maximum 4 hours data loss.) Tj T*
+() Tj T*
+(Backup Verification:) Tj T*
+(All backup restorations are tested quarterly in a non-production) Tj T*
+(environment by the DBA team. Results are reported to the CISO.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(SOP-003: ON-CALL INCIDENT RESPONSE RUNBOOK) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(Objective: Standardize how on-call engineers respond to alerts) Tj T*
+(and incidents.) Tj T*
+() Tj T*
+(On-Call Schedule:) Tj T*
+(- Primary On-Call: Rotates weekly among senior engineers.) Tj T*
+(- Secondary On-Call: Escalation from Primary.) Tj T*
+(- Manager On-Call: Available for P1 escalations.) Tj T*
+(- Schedule managed in PagerDuty.) Tj T*
+() Tj T*
+(When an Alert Fires:) Tj T*
+(1. Acknowledge the PagerDuty alert within 5 minutes.) Tj T*
+(2. Assess severity: P1 / P2 / P3 / P4 \(see Cloud Security Guide\).) Tj T*
+(3. Create incident channel in Slack: #inc-YYYYMMDD-{description}.) Tj T*
+(4. Post incident details: what is affected, start time, impact.) Tj T*
+(5. Begin triage:) Tj T*
+(   a. Check recent deployments \(last 6 hours\).) Tj T*
+(   b. Review dashboards: Datadog, CloudWatch, Grafana.) Tj T*
+(   c. Check ChromaDB and service health endpoints.) Tj T*
+(   d. Review application logs in Splunk \(search for ERROR/CRITICAL\).) Tj T*
+(6. Escalate if not resolved within SLA \(see severity levels\).) Tj T*
+(7. Implement fix or rollback.) Tj T*
+(8. Verify resolution via monitoring dashboards.) Tj T*
+(9. Close incident channel and write brief incident summary.) Tj T*
+(10. Schedule Post-Incident Review \(PIR\) for P1/P2.) Tj T*
+() Tj T*
+(Communication Template \(P1\):) Tj T*
+("INCIDENT | P1 | [Short Description]) Tj T*
+(Status: Investigating / Mitigating / Resolved) Tj T*
+(Impact: [What is affected, number of customers impacted]) Tj T*
+(Started: [Time UTC]) Tj T*
+(Updates: Every 15 minutes until resolved.") Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(SOP-004: ACCESS PROVISIONING & DEPROVISIONING) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(New Employee Access Provisioning:) Tj T*
+(1. Manager submits access request via IT Portal 3 days before start date.) Tj T*
+(2. IT creates Azure AD account and assigns base role \(Employee-Base\).) Tj T*
+(3. IT provisions SSO access for Microsoft 365, Slack, Jira, Confluence.) Tj T*
+(4. Role-specific access \(GitHub, AWS, production tools\) granted on Day 1) Tj T*
+(   via appropriate team-specific Entra ID group.) Tj T*
+(5. MFA enrollment required before first login to any system.) Tj T*
+(6. Access provisioning must be completed by 9:00 AM on employee start date.) Tj T*
+() Tj T*
+(Employee Offboarding \(Access Deprovisioning\):) Tj T*
+(1. HR notifies IT at least 24 hours before last working day.) Tj T*
+(2. On last working day at EOD: Disable Azure AD account immediately.) Tj T*
+(3. Revoke all active SSO sessions.) Tj T*
+(4. Disable all API keys and service account permissions.) Tj T*
+(5. Transfer file ownership \(OneDrive, SharePoint, GitHub\) to manager.) Tj T*
+(6. Archive and disable email. Set up auto-reply: 6 months.) Tj T*
+(7. Collect company hardware within 5 business days.) Tj T*
+(8. Complete IT offboarding checklist in ServiceNow within 48 hours.) Tj T*
+() Tj T*
+(Immediate Termination Protocol:) Tj T*
+(HR notifies IT via phone AND email simultaneously.) Tj T*
+(Azure AD account disabled immediately \(target: within 15 minutes\).) Tj T*
+(All active sessions revoked within 1 hour.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(SOP-005: CAPACITY PLANNING & SCALING PROCEDURE) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(Objective: Proactively manage infrastructure capacity to prevent) Tj T*
+(performance degradation.) Tj T*
+() Tj T*
+(Monthly Capacity Review:) Tj T*
+(1. Pull utilization metrics from Datadog for all production services.) Tj T*
+(2. Flag any service with average CPU > 60% or memory > 70%.) Tj T*
+(3. Project growth based on sales pipeline and product roadmap.) Tj T*
+(4. Submit scaling recommendations to Platform Engineering Lead.) Tj T*
+() Tj T*
+(Auto-Scaling Configuration:) Tj T*
+(- AWS EKS clusters: HPA configured for CPU threshold 70%.) Tj T*
+(- RDS: Storage auto-scaling enabled; max threshold: 10TB.) Tj T*
+(- Lambda: Reserved concurrency set per function; review monthly.) Tj T*
+(- CloudFront CDN: Capacity managed by AWS; no manual intervention.) Tj T*
+() Tj T*
+(Pre-Holiday Scaling \(Thanksgiving, Christmas, End-of-Year\):) Tj T*
+(Scale up primary services by 30% 1 week before holiday period.) Tj T*
+(Scale down 1 week after. Requires Platform Engineering Lead approval.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(APPENDIX A: PRE-DEPLOYMENT CHECKLIST) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+([ ] CI/CD pipeline shows all tests green.) Tj T*
+([ ] Staging smoke tests completed and passed.) Tj T*
+([ ] Database migrations tested in staging \(if applicable\).) Tj T*
+([ ] Feature flags configured correctly.) Tj T*
+([ ] Rollback plan documented and reviewed.) Tj T*
+([ ] On-call engineer identified and available.) Tj T*
+([ ] Monitoring dashboards pulled up and ready.) Tj T*
+([ ] Stakeholders notified of deployment window.) Tj T*
+([ ] ServiceNow Change Request approved.) Tj T*
+([ ] Security scan \(SAST/DAST\) completed with no critical findings.) Tj T*
+() Tj T*
+(=============================================================) Tj T*
+(DOCUMENT CONTROL) Tj T*
+(=============================================================) Tj T*
+() Tj T*
+(Document Owner: VP of Platform Engineering) Tj T*
+(Approved By: CTO, CISO) Tj T*
+(Last Updated: January 15, 2026) Tj T*
+(Next Review: July 2026) Tj T*
+(Classification: Confidential - Internal Use Only) Tj T*
+() Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000183 00000 n 
+0000010237 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+10363
+%%EOF
